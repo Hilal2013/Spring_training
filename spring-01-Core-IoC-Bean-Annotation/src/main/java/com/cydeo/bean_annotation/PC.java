@@ -1,4 +1,4 @@
-package com.cydeo;
+package com.cydeo.bean_annotation;
 
 
 import com.cydeo.bean_annotation.casefactory.Case;

@@ -1,4 +1,4 @@
-package com.cydeo.monitorfactory;
+package com.cydeo.bean_annotation.monitorfactory;
 
 import lombok.Getter;
 import lombok.Setter;

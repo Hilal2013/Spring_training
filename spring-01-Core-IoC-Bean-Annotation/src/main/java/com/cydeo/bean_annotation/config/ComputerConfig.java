@@ -1,4 +1,4 @@
-package com.cydeo.config;
+package com.cydeo.bean_annotation.config;
 
 import com.cydeo.bean_annotation.casefactory.Case;
 import com.cydeo.bean_annotation.casefactory.DellCase;
