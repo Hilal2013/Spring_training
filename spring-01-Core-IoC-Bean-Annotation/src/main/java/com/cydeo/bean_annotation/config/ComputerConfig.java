@@ -14,10 +14,11 @@ import org.springframework.context.annotation.Primary;
 @Configuration
 public class ComputerConfig {
     @Bean
+    @Primary
     public Monitor monitorSony() {//I could write SonyMonitor //Polymorphisim
         return new SonyMonitor("25 inch Beast", "Acer", 25);
     }
-    @Bean
+    @Bean(name="acer")
     public Monitor monitorAcer(){
         return new AcerMonitor("23 inch Beast","Acer",23);
     }
