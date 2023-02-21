@@ -16,7 +16,7 @@ public class ComputerConfig {
     @Bean
     @Primary
     public Monitor monitorSony() {//I could write SonyMonitor //Polymorphisim
-        return new SonyMonitor("25 inch Beast", "Acer", 25);
+        return new SonyMonitor("25 inch Beast", "Sony", 25);
     }
     @Bean(name="acer")
     public Monitor monitorAcer(){
