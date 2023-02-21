@@ -10,13 +10,9 @@ import org.springframework.stereotype.Component;
 @Getter
 @Component
 public class PC {
-@Autowired
     private Case theCase;
-@Autowired
     private Monitor monitor;
-@Autowired
     private Motherboard motherboard;
-
     public PC(Case theCase, Monitor monitor, Motherboard motherboard) {
         this.theCase = theCase;
         this.monitor = monitor;
