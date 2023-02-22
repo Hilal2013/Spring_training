@@ -6,9 +6,13 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class ComputerTest {
     public static void main(String[] args) {
-        ApplicationContext container=new AnnotationConfigApplicationContext(PcConfig.class);
-   PC myPc= container.getBean(PC.class);
-        System.out.println(myPc.getTheCase().getDimensions().getDepth());
- //  myPc.powerUp();//.NoSuchBeanDefinitionException
+        ApplicationContext container = new AnnotationConfigApplicationContext(PcConfig.class);
+        PC myPc = container.getBean(PC.class);
+        // System.out.println(myPc.getTheCase().getDimensions().getDepth());
+        myPc.powerUp();
+          //Power button pressed
+        //  Drawing pixel with Sony
+        System.out.println( myPc.getTheCase().getDimensions().getWidth());//10
+
     }
 }
