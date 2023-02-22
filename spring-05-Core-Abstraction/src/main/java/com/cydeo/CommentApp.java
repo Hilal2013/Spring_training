@@ -8,6 +8,6 @@ public class CommentApp {
         ApplicationContext container=new AnnotationConfigApplicationContext();
         //All of them my classes so I  wanna go with streotype annotation
        //which one I need to annotate with @ component
-
+//you dont need to everything bean
     }
 }
