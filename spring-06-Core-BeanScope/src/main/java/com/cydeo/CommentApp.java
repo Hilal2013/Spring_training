@@ -18,10 +18,19 @@ public class CommentApp {
 
         CommentService cs1 = context.getBean(CommentService.class);
         CommentService cs2 = context.getBean(CommentService.class);
-
-        System.out.println(cs1);
+/*
+Singleton
+        System.out.println(cs1);//output adresses same
         System.out.println(cs2);
-        System.out.println(cs1==cs2);
+        System.out.println(cs1==cs2);//true
+
+ */
+        //Prototype
+//Spring automatically created one more different object in the container
+       System.out.println(cs1);//output adresses different
+        System.out.println(cs2);
+        System.out.println(cs1==cs2);//false
+
 
     }
 }
