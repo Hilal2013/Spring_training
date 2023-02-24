@@ -1,10 +1,11 @@
 package com.cydeo.proxy;
 
 import com.cydeo.model.Comment;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-
+@Qualifier("Mail")
 public class EmailCommentNotificationProxy implements CommentNotificationProxy{
     //it is eligible to get component yes->ask this class has a dependency
     //second ask is this class injected somewhere //other class requires this class?Yes=>@component
