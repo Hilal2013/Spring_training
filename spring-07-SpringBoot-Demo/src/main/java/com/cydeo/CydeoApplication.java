@@ -24,8 +24,10 @@ public class CydeoApplication {
 	    //hilal
 		//abc123
 		//www.cydeo.com
-	//	commentService.printDbConfigData();
-
+		commentService.printDbConfigData();
+		//Ozzy
+		//abc123
+		//[oracle, postgres, amazon]
 	}
 
 

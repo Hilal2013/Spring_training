@@ -1,12 +1,11 @@
 package com.cydeo.service;
 
 import com.cydeo.config.AppConfigData;
+import com.cydeo.config.DBConfigData;
 import com.cydeo.model.Comment;
 import com.cydeo.proxy.CommentNotificationProxy;
 import com.cydeo.repository.CommentRepository;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.config.BeanDefinition;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -16,11 +15,13 @@ private final CommentRepository commentRepository;//putting final is good practi
     //you might forget creating constructor if we put final->compile error->these arent initiliazed yet
 private final CommentNotificationProxy commentNotificationProxy;
 private final AppConfigData appConfigData;//we should inject
-    public CommentService(CommentRepository commentRepository, @Qualifier("Mail") CommentNotificationProxy commentNotificationProxy, AppConfigData appConfigData) {
+    private final DBConfigData dbConfigData;
+    public CommentService(CommentRepository commentRepository, @Qualifier("Mail") CommentNotificationProxy commentNotificationProxy, AppConfigData appConfigData, DBConfigData dbConfigData) {
      //I put the default Bean Name
         this.commentRepository = commentRepository;
         this.commentNotificationProxy = commentNotificationProxy;
         this.appConfigData = appConfigData;
+        this.dbConfigData = dbConfigData;
     }
 
     public void publishComment(Comment comment){
@@ -38,4 +39,12 @@ private final AppConfigData appConfigData;//we should inject
         System.out.println(appConfigData.getUrl());
 
     }
+
+    public void printDbConfigData(){
+
+        System.out.println(dbConfigData.getUsername());
+        System.out.println(dbConfigData.getPassword());
+        System.out.println(dbConfigData.getType());
+    }
+
 }
