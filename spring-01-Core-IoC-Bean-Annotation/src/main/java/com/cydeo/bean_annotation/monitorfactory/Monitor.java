@@ -1,5 +1,8 @@
 package com.cydeo.bean_annotation.monitorfactory;
 
+import lombok.ToString;
+
+@ToString
 public abstract class Monitor {
 
     private String model;
@@ -13,4 +16,5 @@ public abstract class Monitor {
     }
 
     public abstract void drawPixelAt();
+
 }

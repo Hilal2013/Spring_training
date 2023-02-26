@@ -42,6 +42,7 @@ public class ComputerTest {
         Monitor theMonitor2 = container.getBean("monitorSony", Monitor.class);  //DEFAULT BEAN NAME//method name
         Monitor theMonitor3 = container.getBean("acer", Monitor.class);  //CUSTOM BEAN NAME
         Monitor theMonitor4 = container.getBean( Monitor.class);  //@Primary
-
+        System.out.println(theMonitor2);
+//Monitor(model=25 inch Beast, manufacturer=Sony, size=25)
     }
 }
