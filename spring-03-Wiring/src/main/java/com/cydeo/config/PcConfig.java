@@ -13,10 +13,19 @@ public class PcConfig {
         return new Dimensions(50, 10, 10);
 
     }
+
     @Bean
     public Case caseDell(Dimensions dimensions) {
         // Dimensions dimensions=new Dimensions(50,10,10); this is tightly coupled
         return new DellCase("220B", "Dell", "240", dimensions);
+
+    }
+
+    @Bean
+    public Case caseDell()//no paramater
+    {
+        // Dimensions dimensions=new Dimensions(50,10,10); this is tightly coupled
+        return new DellCase("220B", "Dell", "240", dimensions());//or call methodd
 
     }
 
