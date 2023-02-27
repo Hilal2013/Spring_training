@@ -27,5 +27,10 @@ public class HomeController {
 
         return"home.html";
     }
+    @RequestMapping("/home")
+    public String getPage() {
+
+        return "olaf.html";
+    }
 
 }
