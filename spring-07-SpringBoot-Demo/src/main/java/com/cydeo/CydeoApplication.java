@@ -29,6 +29,8 @@ public class CydeoApplication {
         //Ozzy
         //abc123
         //[oracle, postgres, amazon]
+String str=container.getBean(String.class);
+       // System.out.println(st);
     }
 @Bean
     public String stringBean() {
