@@ -8,5 +8,6 @@ import lombok.Getter;
 @Data
 public class Mentor {
     private String firstName,lastName;
+    private int age;
     private Gender gender;
 }

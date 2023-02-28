@@ -1,5 +1,5 @@
 package com.cydeo.model;
 
 public enum Gender {
-    MAN,WOMAN;
+    MALE,FEMALE;
 }

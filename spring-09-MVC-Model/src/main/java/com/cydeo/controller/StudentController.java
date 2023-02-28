@@ -1,5 +1,6 @@
 package com.cydeo.controller;
 
+import com.cydeo.model.Mentor;
 import com.cydeo.model.Student;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,6 +31,7 @@ public class StudentController {
         model.addAttribute("date",dt);
         Student student=new Student(1,"Mike","Smith");
         model.addAttribute("student",student);
+
         return "student/welcome"; //under student directory welcome file(no need .html)
 
     }
