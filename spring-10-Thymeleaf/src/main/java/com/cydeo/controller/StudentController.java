@@ -24,4 +24,9 @@ public class StudentController {
         System.out.println(name);//on console prints for example Dominick
         return "student/welcome";
     }
+    @RequestMapping("/welcome1")
+    public String welcome(){
+        return "student/welcome";
+    }
+
 }
