@@ -13,9 +13,23 @@
 
 <!--Concatenation-->
 
-<h2 th:text="${'Hello'+students.get(0).getFirstName()}"></h2>
+<h2 th:text="${'Hello'+' '+students.get(0).getFirstName()}"></h2>
 <h2 th:text="${students.get(0).getFirstName()+' '+students.get(0).getLastName()}"></h2>
+<!--Link-->
+<h2>
+    <a th:href="@{http://cydeo.com}" target="_blank">Cydeo Page</a>
 
+</h2>
+<h2>
+    <a th:href="@{/student/welcome}">Welcome</a>
+</h2>
+<!--adding parameters to the link-->
 
+<h2>
+    <a th:href="@{/student/welcome(id=3)}">LinkId</a>
+</h2>
+<h2>
+    <a th:href="@{/student/welcome(name=${students.get(0).getFirstName()})}">LinkName</a>
+</h2>
 </body>
 </html>
