@@ -15,7 +15,7 @@ import java.util.Random;
 @Controller
 public class StudentController {
 
-    @RequestMapping("/welcome")
+    @RequestMapping("/welcome")//http://localhost:8080/welcome
     public String homePage(Model model) {//I want to execute methode belongs to Model interface
 
         model.addAttribute("name", "Cydeo");//takes two attribute

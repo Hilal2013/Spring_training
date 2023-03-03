@@ -18,15 +18,22 @@ public class StudentController {
         return "student/register";
     }
 
-    @RequestMapping("/welcome")
-    public String welcome(@RequestParam String name){
-   //     model.addAttribute("students",DataGenerator.createStudent());
-        System.out.println(name);//on console prints for example Dominick
+    @RequestMapping("/welcome")//http://localhost:8080/student/welcome
+    public String welcome(Model model){
+       model.addAttribute("students",DataGenerator.createStudent());
+      //on console prints for example Titus
         return "student/welcome";
     }
-    @RequestMapping("/welcome1")
+   //Welcome to Cydeo!
+    //Titus
+    //Privacy Terms
+
+    /*
+    @RequestMapping("/welcome")
     public String welcome(){
         return "student/welcome";
     }
 
+
+     */
 }
