@@ -1,10 +1,35 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
 <head>
-    <meta charset="UTF-8">
-    <title>Cydeo</title>
+        <meta charset="UTF-8">
+        <title>Cydeo</title>
 </head>
 <body>
-Welcome to register page
+
+<div align="center">
+
+        <form th:action="@{/mentor/confirm}" method="post" th:object="${mentor}">
+
+                <label>First Name:</label>
+                <input type="text" th:field="*{mentor1.firstName}"><br>
+
+                <label>Last Name:</label>
+                <input type="text" th:field="*{mentor1.lastName}"><br>
+
+                <label>Email:</label>
+                <input type="email" th:field="*{mentor1.email}"><br>
+
+                <label>Graduated:</label>
+                <input type="checkbox" th:field="*{mentor1.graduated}"><br>
+
+                <label>Gender:</label>
+                <input type="radio" value="Male" th:field="*{mentor1.gender}">
+                <input type="radio" value=Female" th:field="*{mentor1.gender}"><br>
+
+
+        </form>
+
+</div>
+
 </body>
 </html>
