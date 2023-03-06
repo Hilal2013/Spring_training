@@ -17,12 +17,7 @@ public class DataGenerator {
         );
         return students;
     }
-    public static List<Mentor> createMentor(){
-        return Arrays.asList(new Mentor("Mike","Smith",45, Gender.MALE),
-                new Mentor("Tom","Hanks",65, Gender.MALE),
-                new Mentor("Ammy","Bryan",25, Gender.FEMALE));
 
-    }
 
 
 }

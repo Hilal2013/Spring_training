@@ -15,23 +15,23 @@
 <body>
 <div align="center">
 
-  <form th:action="@{/mentor/confirm}" method="post" th:object="${mentor}">
+  <form  th:object="${mentor}">
 
     <label>First Name:</label>
-    <input type="text" th:field="*{mentor1.firstName}"><br>
+    <input type="text" th:field="*{mentor.firstName}"><br>
 
     <label>Last Name:</label>
-    <input type="text" th:field="*{mentor1.lastName}"><br>
+    <input type="text" th:field="*{mentor.lastName}"><br>
 
     <label>Email:</label>
-    <input type="email" th:field="*{mentor1.email}"><br>
+    <input type="email" th:field="*{mentor.email}"><br>
 
     <label>Graduated:</label>
-    <input type="checkbox" th:field="*{mentor1.graduated}"><br>
+    <input type="checkbox" th:field="*{mentor.graduated}"><br>
 
     <label>Gender:</label>
-    <input type="radio" value="Male" th:field="*{mentor1.gender}">
-    <input type="radio" value=Female" th:field="*{mentor1.gender}"><br>
+    <input type="radio" value="Male" th:field="*{mentor.gender}">
+    <input type="radio" value=Female" th:field="*{mentor.gender}"><br>
 
 
   </form>

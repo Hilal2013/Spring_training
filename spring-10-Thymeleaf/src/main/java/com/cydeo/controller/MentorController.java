@@ -13,6 +13,7 @@ public class MentorController {
 
     @GetMapping("/register") //localhost:8080/mentor/register
     public String register(Model model){
+
         model.addAttribute("mentor",new Mentor());
         //lets give this object to view through attribute
         //this mentor is holding new empty object//i need to pass this objet to view
