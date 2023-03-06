@@ -2,11 +2,17 @@ package com.cydeo.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @Data
+@NoArgsConstructor
 public class Mentor {
-    private String firstName,lastName;
-    private int age;
-    private Gender gender;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String gender;
+    private String batch;
+    private boolean graduated;
+    private String company;
 }

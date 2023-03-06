@@ -13,25 +13,30 @@
   <title>Title</title>
 </head>
 <body>
-<table>
-  <thead style="color: red">
-  <tr>
-    <th><b>First Name</b></th>
-    <th><b>Last Name</b></th>
-    <th><b>Age</b></th>
-    <th><b>Gender</b></th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr th:each="mentor:${mentors}">
-    <td th:text="${mentor.getFirstName()}"></td>
-    <td th:text="${mentor.getLastName()}"></td>
-    <td th:text="${mentor.getAge()}"></td>
-    <td th:text="${mentor.getGender()}"></td>
-  </tr>
+<div align="center">
 
-  </tbody>
-</table>
+  <form th:action="@{/mentor/confirm}" method="post" th:object="${mentor}">
+
+    <label>First Name:</label>
+    <input type="text" th:field="*{mentor1.firstName}"><br>
+
+    <label>Last Name:</label>
+    <input type="text" th:field="*{mentor1.lastName}"><br>
+
+    <label>Email:</label>
+    <input type="email" th:field="*{mentor1.email}"><br>
+
+    <label>Graduated:</label>
+    <input type="checkbox" th:field="*{mentor1.graduated}"><br>
+
+    <label>Gender:</label>
+    <input type="radio" value="Male" th:field="*{mentor1.gender}">
+    <input type="radio" value=Female" th:field="*{mentor1.gender}"><br>
+
+
+  </form>
+
+</div>
 </body>
 </html>
 

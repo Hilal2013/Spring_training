@@ -1,6 +1,5 @@
 package com.cydeo.bootstrap;
 
-import com.cydeo.model.Gender;
 import com.cydeo.model.Mentor;
 import com.cydeo.model.Student;
 import com.github.javafaker.Faker;
