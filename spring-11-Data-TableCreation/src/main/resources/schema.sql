@@ -1,4 +1,4 @@
-drop table if exists employees;
+//drop table if exists employees;
 
 create table EMPLOYEES(
 
