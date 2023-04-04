@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 @Entity
-@Table(name="students")
+@Table(name = "students")
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,7 +24,9 @@ public class Student {
     private LocalTime birthTime;
     @Column(columnDefinition = "TIMESTAMP")
     private LocalDateTime birthDateTime;
-
+    @Enumerated(EnumType.STRING)
     private Gender gender;
+    @Transient
+    private String city;
 
 }
