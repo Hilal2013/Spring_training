@@ -1,7 +1,8 @@
 package com.cydeo.Entity;
 
+import javax.persistence.Entity;
 import java.math.BigDecimal;
-
-public class DebitAccount {
+@Entity
+public class DebitAccount extends Account{
     private BigDecimal overDraftFee;
 }
