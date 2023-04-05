@@ -21,13 +21,17 @@ public class DataGenerator implements CommandLineRunner {
         Payment payment1 = new Payment(LocalDate.of(2022,4,19),new BigDecimal("150000"), Status.SUCCESS);
         PaymentDetail paymentDetail1 = new PaymentDetail(new BigDecimal("140000"),new BigDecimal("10000"),LocalDate.of(2022,4,24));
 
-        payment1.setPaymentDetail(paymentDetail1);//wedidnt put in constructor//we set here
+        payment1.setPaymentDetail(paymentDetail1);//we didnt put in constructor//we set here
 
         Payment payment2 = new Payment(LocalDate.of(2022,4,25),new BigDecimal("100000"), Status.FAILURE);
         PaymentDetail paymentDetail2 = new PaymentDetail(new BigDecimal("90000"),new BigDecimal("5000"),LocalDate.of(2022,4,29));
 
         payment2.setPaymentDetail(paymentDetail2);
+//we could repository  paymentDatail pository and we would save them. But weused cascade
         paymentRepository.save(payment1);
         paymentRepository.save(payment2);
+        System.out.println(paymentRepository.findById(2L).get().getPaymentDetail().getCommissionAmount());
+
+
     }
 }
