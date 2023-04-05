@@ -20,7 +20,8 @@ public class PaymentDetail {
 
     @Column(columnDefinition = "DATE")
     private LocalDate payoutDate;
-
+    @OneToOne(mappedBy = "paymentDetail")
+    private Payment payment;
 
 
 }
