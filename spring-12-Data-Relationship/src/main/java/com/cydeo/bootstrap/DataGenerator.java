@@ -5,10 +5,11 @@ import com.cydeo.entity.PaymentDetail;
 import com.cydeo.enums.Status;
 import com.cydeo.repository.PaymentRepository;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-
+@Component ///Dont forget
 public class DataGenerator implements CommandLineRunner {
     private final PaymentRepository paymentRepository;
 
@@ -32,6 +33,6 @@ public class DataGenerator implements CommandLineRunner {
         paymentRepository.save(payment2);
         System.out.println(paymentRepository.findById(2L).get().getPaymentDetail().getCommissionAmount());
 
-
+paymentRepository.delete(payment1);
     }
 }
