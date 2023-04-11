@@ -34,7 +34,7 @@ private final EmployeeRepository employeeRepository;
         System.out.println("findDistinctTop3ByDivisionContains:" + departmentRepository.findDistinctTop3ByDivisionContains("Hea"));
 
         System.out.println("-----------EMPLOYEES----------");
-      //  System.out.println(employeeRepository.retrieveEmployeeDetail());
+       System.out.println(employeeRepository.retrieveEmployeeDetail());
 
 
 
