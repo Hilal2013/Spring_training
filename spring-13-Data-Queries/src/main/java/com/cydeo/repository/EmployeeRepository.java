@@ -41,8 +41,8 @@ List<Employee> findByEmail(String email);
     @Query("select e.salary from Employee e WHERE e.email='amcnee1@google.es' ")
     Integer retrieveEmployeeSalary();// i need to get salary field //through object//object.salary e. salary
 
-    List<Employee> retrieveEmployeeFirstNameLike(String pattern);
+   // List<Employee> retrieveEmployeeFirstNameLike(String pattern);
 
-    List<String> retrieveEmployeeSalaryGreaterThan(int salary);
-    List<Employee> retrieveEmployeeSalaryBetween(int salary1,int salary2);
+   // List<String> retrieveEmployeeSalaryGreaterThan(int salary);
+   // List<Employee> retrieveEmployeeSalaryBetween(int salary1,int salary2);
 }
