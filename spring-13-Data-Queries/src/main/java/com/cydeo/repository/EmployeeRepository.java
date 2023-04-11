@@ -2,6 +2,7 @@ package com.cydeo.repository;
 
 import com.cydeo.entity.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -33,4 +34,12 @@ List<Employee> findByEmail(String email);
     List<Employee> findDistinctTop3BySalaryLessThan(Integer salary);
     //Display all employees that do not have email address
     List<Employee> findByEmailIsNull();
+
+
+    @Query("select employee from Employee employee where employee.email='amcnee1@google.es'  ")
+    Employee retrieveEmployeeDetail();//it doesnt derive query method name cann be everything
+    @Query("select e.salary from Employee e WHERE e.email='amcnee1@google.es' ")
+    Integer retrieveEmployeeSalary();// i need to get salary field //through object//object.salary e. salary
+
+
 }
