@@ -3,10 +3,7 @@ package com.cydeo.controller;
 import com.cydeo.dto.CourseDTO;
 
 import com.cydeo.service.CourseService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -34,6 +31,23 @@ public CourseDTO getCourseById(@PathVariable("id") long courseId){
     public List<CourseDTO> getCourseByCategory(@PathVariable("name") String categoryName){
 
         return courseService.getCoursesByCategory(categoryName);
+    }
+
+    @PostMapping()
+    public CourseDTO createCourse(@RequestBody CourseDTO course){
+//how im gonna capture Json from postman body
+        //whatever we are puttin in API we captur with @RequestBody
+        return courseService.createCourse(course);
+    }
+    @PutMapping("{id}")
+    public void updateCourse(@PathVariable("id") long courseId,@RequestBody CourseDTO course){
+//we need to capture that object too
+         courseService.updateCourse(courseId,course);
+    }
+    @DeleteMapping("{id}")
+    public void deleteCourse(@PathVariable("id") long courseId){
+
+        courseService.deleteCourseById(courseId);
     }
 
 }
