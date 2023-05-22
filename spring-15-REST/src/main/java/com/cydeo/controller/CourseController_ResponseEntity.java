@@ -6,10 +6,7 @@ import com.cydeo.dto.CourseDTO;
 import com.cydeo.service.CourseService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -38,5 +35,29 @@ public class CourseController_ResponseEntity {
         //return will be responseEntity
         return ResponseEntity.ok(courseService.getCourseById(courseId));
     }
+    @GetMapping("category/{name}")
+    public ResponseEntity<List<CourseDTO>> getCourseByCategory(@PathVariable("name") String categoryName){
 
+        return ResponseEntity.ok(courseService.getCoursesByCategory(categoryName));
+    }
+
+    @PostMapping
+    public ResponseEntity<CourseDTO> createCourse(@RequestBody CourseDTO course){
+        return ResponseEntity
+                .status(HttpStatus.CREATED)//201 created
+                .header("Operation","Create")
+                .body(courseService.createCourse(course));
+
+    }
+    @DeleteMapping("{id}")
+    public ResponseEntity<Void> deleteCourseById(@PathVariable("id") Long courseId){
+        courseService.deleteCourseById(courseId);
+        return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping("{id}")
+    public ResponseEntity<Void> updateCourse(@PathVariable("id") Long courseId,@RequestBody CourseDTO course){
+        courseService.updateCourse(courseId,course);
+        return ResponseEntity.noContent().build();
+    }
 }
