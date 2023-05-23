@@ -16,7 +16,7 @@ package com.cydeo.controller;
 //public class Consume_WebClient {
 //
 //    private WebClient webClient = WebClient.builder().baseUrl("http://localhost:8080").build();
-//
+//// localhost represents here what we are consumin my own API
 //    private final MovieCinemaService movieCinemaService;
 //    private final GenreService genreService;
 //
