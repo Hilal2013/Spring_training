@@ -14,7 +14,7 @@ public class Spring17RestConsumingApIsApplication {
 
 
     @Bean
-    public RestTemplate restTemplate(){
+    public RestTemplate restTemplate(){//i need to use certain methods in certain class belongs to the Rest Template //to inject
         return new RestTemplate();
     }
 
