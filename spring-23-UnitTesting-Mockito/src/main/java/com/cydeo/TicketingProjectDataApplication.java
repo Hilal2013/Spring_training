@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Spring23UnitTestingMockitoApplication {
+public class TicketingProjectDataApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Spring23UnitTestingMockitoApplication.class, args);
+        SpringApplication.run(TicketingProjectDataApplication.class, args);
     }
 
 }
