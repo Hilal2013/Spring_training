@@ -18,23 +18,23 @@ import static org.mockito.BDDMockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class TaskServiceImplTest {
-
+//we are gonna test findBYId method
     @Mock
     TaskRepository taskRepository;
 
     @Mock
     TaskMapper taskMapper;
 
-    @InjectMocks
+    @InjectMocks //i need to inject these mock objects into task service impl instead of real taskRepository and taskMapper
     TaskServiceImpl taskServiceImpl;
 
     @ParameterizedTest
     @ValueSource(longs = {1L, 2L, 3L})
     void findById_Test(long id) {
-
+//first behavior// we need to provide and returning objects four mocks
         // Given (Preparation)
-        Task task = new Task();
-
+        Task task = new Task();//create new task entity
+//im not gonna use anyLong just use id
         when(taskRepository.findById(id)).thenReturn(Optional.of(task));   // Optional<Task>
         when(taskMapper.convertToDto(task)).thenReturn(new TaskDTO());
 
@@ -52,6 +52,7 @@ class TaskServiceImplTest {
 
         // Given
         Task task = new Task();
+        //coming fromm BDDMackito
         given(taskRepository.findById(anyLong())).willReturn(Optional.of(task));
         given(taskMapper.convertToDto(task)).willReturn(new TaskDTO());
 

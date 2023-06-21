@@ -32,14 +32,18 @@ class UserServiceImplTest {
         // I'm checking if this method ran or not.//if the userRepository find this method is run or not//we are checking until here is ok or not
         verify(userRepository).findByUserNameAndIsDeleted("harold@manager.com", false);
 //verify that user repositories this method getting called one time two times we are checking how many times if we put 2  test fail
+       //in some methods we can use more than one methods for example mapperUtil.convert
         verify(userRepository, times(1)).findByUserNameAndIsDeleted("harold@manager.com", false);
-
+//
         verify(userRepository, atLeastOnce()).findByUserNameAndIsDeleted("harold@manager.com", false);
         verify(userRepository, atLeast(1)).findByUserNameAndIsDeleted("harold@manager.com", false);
 
         verify(userRepository, atMostOnce()).findByUserNameAndIsDeleted("harold@manager.com", false);
+
+        //this is gonna faill because this method is not running 10 times
         verify(userRepository, atMost(10)).findByUserNameAndIsDeleted("harold@manager.com", false);
 
+       // you want to see order// check order
         InOrder inOrder = inOrder(userRepository, userMapper);
 
         inOrder.verify(userRepository).findByUserNameAndIsDeleted("harold@manager.com", false);
